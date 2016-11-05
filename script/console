@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+
+cd ./bin && python3   ./ballindalloch.py
