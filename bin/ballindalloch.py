@@ -54,10 +54,12 @@ class Ballindalloch:
 		self.app.route('/nodes', ['GET'], self.home_page.nodes_get)
 		self.app.route('/swarm', ['GET'], self.home_page.swarm_get)
 		self.app.route('/services', ['GET'], self.home_page.services_get)
+		self.app.route('/services_create', ['GET'], self.home_page.services_create_get)
+		self.app.route('/services_create', ['POST'], self.home_page.services_create_post)
 		self.app.route('/tasks', ['GET'], self.home_page.tasks_get)
 
 		#/services/create
-	
+
 	def run(self):
 		'''Start listening'''
 		bottle.run(

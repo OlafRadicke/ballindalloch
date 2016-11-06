@@ -1,7 +1,8 @@
 import bottle
 import json
+import simplejson
 import logging
-
+import yaml
 
 class Home:
 
@@ -161,7 +162,28 @@ class Home:
 		)
 		return html_sources
 
-	#/tasks
+	def services_create_get(self):
+		'''Create service form'''
+
+		block_create_service = bottle.template('block_create_service')
+
+		html_sources = bottle.template(
+		    'skeleton',
+			uri_prefix=self.configData[ "webservice_pub_host" ],
+		    title="Create ervices",
+		    main_area=block_create_service
+		)
+		return html_sources
+
+	def services_create_post(self):
+		'''The POST controller for creating new service'''
+
+		json_doc = bottle.request.forms.getunicode('description_text')
+		print( "I will send: \n \n" + json_doc)
+		response = self.dockerRest.doPOST( "/services/create", json_doc )
+		print( "response: \n \n " + response.text )
+		print( response )
+		bottle.redirect("/services")
 
 
 	def tasks_get(self):

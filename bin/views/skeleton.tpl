@@ -43,11 +43,7 @@
 
 <!-- main area -->
     <div>
-		<pre>
-			<code>
-               {{main_area}}
-		   </code>
-	   </pre>
+{{!main_area}}
     </div>
 
 
