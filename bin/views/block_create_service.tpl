@@ -30,37 +30,12 @@
         }
       ],
       "User": "33"
-    },
-    "LogDriver": {
-      "Name": "json-file",
-      "Options": {
-        "max-file": "3",
-        "max-size": "10M"
-      }
-    },
-    "Placement": {},
-    "Resources": {
-      "Limits": {
-        "MemoryBytes": 104857600.0
-      },
-      "Reservations": {
-      }
-    },
-    "RestartPolicy": {
-      "Condition": "on-failure",
-      "Delay": 10000000000.0,
-      "MaxAttempts": 10
     }
   },
   "Mode": {
     "Replicated": {
       "Replicas": 4
     }
-  },
-  "UpdateConfig": {
-    "Delay": 30000000000.0,
-    "Parallelism": 2,
-    "FailureAction": "pause"
   },
   "EndpointSpec": {
     "Ports": [
@@ -70,9 +45,6 @@
         "TargetPort": 80
       }
     ]
-  },
-  "Labels": {
-    "foo": "bar"
   }
 }
 			</textarea>
